@@ -1,0 +1,11 @@
+.default-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+
+  background: rgba(42, 62, 78, 0.75);
+  backdrop-filter: blur(4px);
+
+  border-radius: 10px;
+}

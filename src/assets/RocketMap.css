@@ -1,0 +1,45 @@
+.leaflet-container{
+  display: flex;
+
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  align-self: center;
+
+  border-radius: 15px;
+}
+
+.leaflet-control{
+  border-radius: 27.5px;
+  background-color: #011826;
+}
+
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out{
+  border: 0px;
+  outline: transparent;
+  color: #fff;
+
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.leaflet-control:hover{
+  border-radius: 27.5px;
+  background-color:#011826;
+}
+
+.leaflet-touch .leaflet-control-zoom-out:hover{
+  background-color:rgba(225,  225, 225, 0.1)
+}
+
+.leaflet-touch .leaflet-control-zoom-in:hover{
+  background-color:rgba(225,  225, 225, 0.1)
+
+}
+
+.leaflet-touch .leaflet-bar{
+  border: 0px
+}
+
+

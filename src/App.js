@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Graph} from './components/Widgets/Graph';
+import {RocketMap} from './components/RocketMap';
+import './assets/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <>
+      <div className="flex-container">
+        <p style={{marginLeft: '20px'}}>
+          Novo dado
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <input style={{marginLeft: '20px', marginRight: '3px', width: '35px'}} />
+        x
+        <input style={{marginLeft: '20px', marginRight: '3px', width: '35px'}} />
+        y
+        <button type="button" style={{marginLeft: '10px'}}>
+          add
+        </button>
+      </div>
+      <Graph text='Gráfico Corno'/>
+      <RocketMap width="510px" height="480px" />
+    </>
   );
 }
 

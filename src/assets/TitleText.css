@@ -1,0 +1,12 @@
+.title-text{
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 40px;
+  font-size: 40px;
+  line-height:0px;
+  display: flex;
+
+  color: #F2F2F2;
+
+  text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+}

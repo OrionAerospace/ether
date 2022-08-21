@@ -1,0 +1,89 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "google"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "__CLIENT__": "readonly",
+    "__SERVER__": "readonly",
+    "__DEV__": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import"
+  ],
+  "rules": {
+    "brace-style": [
+      2,
+      "1tbs", {
+        "allowSingleLine": true
+      }
+    ],
+    "comma-dangle": [
+      2,
+      "never"
+    ],
+    "comma-style": [
+      2, "first", {
+        "exceptions": {
+          "ArrayExpression": true,
+          "ObjectExpression": true
+        }
+      }
+    ],
+    "complexity": [2, 6],
+    "curly": 2,
+    "max-statements": [2, 30],
+    "max-lines-per-function": ["error", {"max": 20, "skipComments": true, "skipBlankLines": true}],
+    "max-lines": ["error", {"max": 200, "skipComments": true, "skipBlankLines": true}],
+    "max-nested-callbacks": [2,2],
+    "max-depth": [2,2],
+    "eqeqeq": [2, "allow-null"],
+    "no-shadow-restricted-names": 2,
+    "no-undef": 2,
+    "no-use-before-define": 2,
+    "radix": 2,
+    "semi": 2,
+    "space-infix-ops": 2,
+    "strict": 0,
+    "require-jsdoc": 0,
+    "react/prop-types": 0,
+    "max-len": [ "error",
+      {"ignoreStrings": true, "ignoreComments":true }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": [ "**/__tests__/**/*.js" ],
+      "rules": {
+        "no-undef": "off",
+        "max-len": "off",
+        "max-lines-per-function": "off",
+        "max-nested-callbacks": "off",
+        "max-statements": "off",
+        "max-lines": "off"
+      }
+    }
+  ]
+}
+
