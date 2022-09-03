@@ -1,0 +1,19 @@
+.description-text{
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 10px;
+  font-size: 10px;
+  line-height:0px;
+  display: flex;
+
+  color: #F2F2F2;
+
+  text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rdb-style{
+  padding: 16px 0;
+  text-align: center;
+  background: rgba(255,255,255,.03);
+  border-radius: .3em;
+}

@@ -5,29 +5,31 @@ import {
   YAxis, GradientDefs, AreaSeries
 } from 'react-vis';
 import DefaultContainer from '../Basics/DefaultContainer';
+import 'd3-shape';
 
 export class Graph extends Component {
   constructor() {
     super();
     this.state = {
-      data: [{x: Date.now(), y: (0.9 + Math.random() * 0.2)}],
-      avarege: []
+      data: [{x: Date.now(), y: (0.9 + Math.random() * 0.2)}]
     };
   }
-  addToAvarageData(data) {
-    console.log(data);
-    this.setState({avarege: [...this.state.avarege, data]});
+
+  componentDidMount() {
+    this.timerID = setInterval(
+        () => this.dataUpdater(),
+        1000
+    );
   }
 
   removeOldData() {
     const dataArray = this.state.data;
     const dataLength = dataArray.length;
 
-    if (dataLength > 20) this.addToAvarageData(dataArray.shift());
+    if (dataLength > 20) dataArray.shift();
 
     return dataArray;
   }
-  // timeDelta = ((timeDelta % 60000) / 1000).toFixed(0);
 
   dataUpdater() {
     const dataArray = this.removeOldData();
@@ -36,7 +38,7 @@ export class Graph extends Component {
       data: [...dataArray,
         {
           x: Date.now(),
-          y: (0.9 + Math.random() * 0.2)
+          y: (Math.random() * 10)
         }
       ]
     });
@@ -66,20 +68,27 @@ export class Graph extends Component {
           <XAxis title="X Axis"/>
           <HorizontalGridLines />
           <MarkSeries data={this.state.avarege}/>
-          <AreaSeries data={this.state.data} curve='curveMonotoneX' fill={'url(#myGradient)'} opacity={0.81} stroke={'#789BCF'} animation={'noWobble'}/>
+          <AreaSeries data={this.state.data} curve='curveMonotoneX' fill={'url(#myGradient)'} opacity={0.81} stroke={'#789BCF'} animation/>
         </XYPlot>
       </div>
     );
   }
 
+  /* renderDataFilters() {
+    return (
+      <div style = {{flexDirection: 'row'}}>
+
+      </div>
+    );
+  } */
+
   render() {
     const {image, text} = this.props;
     return (
       <>
-        <button onClick={()=>this.dataUpdater()}>aaaaaaaaa</button>
-
         <DefaultContainer styles={{position: 'absolute', width: 'auto', height: 'auto'}}
           image={image} text={text}>
+          {/* {this.renderDataFilters()} */}
           <DefaultContainer styles={{position: 'relative', width: 'auto', height: 'auto', background: 'rgba(255, 255, 255, 0.95)', backdropFilter: 'blur(4px)'}}>
             {this.renderGraph()}
           </DefaultContainer>
